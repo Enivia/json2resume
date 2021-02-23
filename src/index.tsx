@@ -4,6 +4,12 @@ import ResumeConfig from './interfaces/config';
 import Resume from './interfaces/resume';
 import renderer from './renderer';
 import Basic from './renderer/basic';
+import {
+  defaultFooterConfig,
+  defaultGlobalConfig,
+  defaultHeaderConfig,
+  defaultSectionConfig,
+} from './constants';
 
 interface Props {
   resume: Resume;
@@ -14,9 +20,18 @@ const Json2Resume: React.FC<Props> = React.memo(props => {
   const { resume, config } = props;
   const { sort, basicInfo, ...sections } = resume;
 
-  const configContextValue = React.useMemo<ConfigContextValue>(() => ({ config }), [
-    config,
-  ]);
+  const configContextValue = React.useMemo<ConfigContextValue>(() => {
+    const { global, header, section, footer } = config || {};
+    const configValue: ResumeConfig = {
+      global: { ...defaultGlobalConfig, ...global },
+      header: { ...defaultHeaderConfig, ...header },
+      section: { ...defaultSectionConfig, ...section },
+      footer: { ...defaultFooterConfig, ...footer },
+    };
+    return { config: configValue };
+  }, [config]);
+
+  console.log(configContextValue)
 
   return (
     <ResumeConfigContext.Provider value={configContextValue}>

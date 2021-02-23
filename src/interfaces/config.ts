@@ -2,7 +2,8 @@ export type TSize = 'xs' | 's' | 'm' | 'l' | 'xl';
 export type TPlacement = 'left' | 'right' | 'center';
 
 export type TGlobalConfig = {
-  fontSize?: TSize;
+  color?: string;
+  fontSize?: string;
   lineHeight?: TSize;
   margin?: TSize;
 };
