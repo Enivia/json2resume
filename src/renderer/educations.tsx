@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TEducation } from '../interfaces';
+import { TEducation } from '../interfaces/resume';
 
 interface Props {
   educations: TEducation[];

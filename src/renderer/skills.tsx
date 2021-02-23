@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TSkill } from '../interfaces';
+import { TSkill } from '../interfaces/resume';
 
 interface Props {
   skills: TSkill[];

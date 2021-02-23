@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TExperience } from '../interfaces';
+import { TExperience } from '../interfaces/resume';
 
 interface Props {
   experiences: TExperience[];

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TProject } from '../interfaces';
+import { TProject } from '../interfaces/resume';
 
 interface Props {
   projects: TProject[];

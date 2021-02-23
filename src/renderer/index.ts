@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { TSelctionType } from '../interfaces';
+import { TSelctionType } from '../interfaces/resume';
 import Awards from './awards';
 import Educations from './educations';
 import Experiences from './experiences';

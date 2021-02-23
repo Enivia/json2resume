@@ -1,26 +1,37 @@
 import * as React from 'react';
-import { TResume } from './interfaces';
+import ResumeConfigContext, { ResumeConfigContextValue } from './config-context';
+import Config from './interfaces/config';
+import Resume from './interfaces/resume';
 import renderer from './renderer';
 import Basic from './renderer/basic';
 
 interface Props {
-  resume: TResume;
+  resume: Resume;
+  config?: Config;
 }
 
 const Json2Resume: React.FC<Props> = React.memo(props => {
-  const { sort, basicInfo, ...sections } = props.resume;
+  const { resume, config } = props;
+  const { sort, basicInfo, ...sections } = resume;
+
+  const configContextValue = React.useMemo<ResumeConfigContextValue>(
+    () => ({ config }),
+    [config]
+  );
 
   return (
-    <div>
-      <Basic info={basicInfo} />
+    <ResumeConfigContext.Provider value={configContextValue}>
       <div>
-        {sort.map(key => {
-          const Renderer = renderer[key];
-          const rendererProps = { [key]: sections[key] };
-          return <Renderer key={key} {...rendererProps} />;
-        })}
+        <Basic info={basicInfo} />
+        <div>
+          {sort.map(key => {
+            const Renderer = renderer[key];
+            const rendererProps = { [key]: sections[key] };
+            return <Renderer key={key} {...rendererProps} />;
+          })}
+        </div>
       </div>
-    </div>
+    </ResumeConfigContext.Provider>
   );
 });
 

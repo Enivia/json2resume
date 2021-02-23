@@ -55,7 +55,7 @@ export type TResumeSection = {
 
 export type TSelctionType = keyof TResumeSection;
 
-export interface TResume extends TResumeSection {
+export default interface Resume extends TResumeSection {
   sort: TSelctionType[];
   basicInfo: TBasicInfo;
 }

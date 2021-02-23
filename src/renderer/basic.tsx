@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TBasicInfo } from '../interfaces';
+import { TBasicInfo } from '../interfaces/resume';
 
 interface Props {
   info: TBasicInfo;
