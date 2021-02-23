@@ -1,5 +1,5 @@
 export type TSize = 'xs' | 's' | 'm' | 'l' | 'xl';
-export type TPlacement = 'left' | 'right' | 'top';
+export type TPlacement = 'left' | 'right' | 'center';
 
 export type TGlobalConfig = {
   fontSize?: TSize;
@@ -35,7 +35,7 @@ export type TFooterConfig = {
   content?: TFooterContent[];
 };
 
-export default interface Config {
+export default interface ResumeConfig {
   global?: TGlobalConfig;
   header?: THeaderConfig;
   section?: TSectionConfig;
