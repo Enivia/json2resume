@@ -11,6 +11,8 @@ import {
   defaultSectionConfig,
 } from './constants';
 
+import './index.css';
+
 interface Props {
   resume: Resume;
   config?: ResumeConfig;
@@ -31,11 +33,9 @@ const Json2Resume: React.FC<Props> = React.memo(props => {
     return { config: configValue };
   }, [config]);
 
-  console.log(configContextValue)
-
   return (
     <ResumeConfigContext.Provider value={configContextValue}>
-      <div>
+      <div className="json2resume-renderer-container">
         <Basic info={basicInfo} />
         <div>
           {sort.map(key => {
