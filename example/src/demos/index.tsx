@@ -3,12 +3,14 @@ import Json2Resume from '../../../src';
 
 const Demos = () => {
   return (
-    <Json2Resume
-      resume={{
-        sort: ['educations', 'experiences', 'projects', 'awards', 'skills'],
-        basicInfo: {},
-      }}
-    />
+    <div style={{ height: 600 }}>
+      <Json2Resume
+        resume={{
+          sort: ['educations', 'experiences', 'projects', 'awards', 'skills'],
+          basicInfo: {},
+        }}
+      />
+    </div>
   );
 };
 

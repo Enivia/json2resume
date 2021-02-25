@@ -5,7 +5,7 @@ export type TGlobalConfig = {
   color?: string;
   fontSize?: string;
   lineHeight?: TSize;
-  margin?: TSize;
+  padding?: TSize;
 };
 
 export type THeaderConfig = {
