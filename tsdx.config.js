@@ -7,8 +7,8 @@ module.exports = {
     config.plugins.push(
       postcss({
         plugins: [autoprefixer(), cssnano({ preset: 'default' })],
-        inject: false,
-        // only write out CSS for the first bundle (avoids pointless extra files):
+        // inject: true,
+        modules: true,
         extract: !!options.writeMeta,
       })
     );

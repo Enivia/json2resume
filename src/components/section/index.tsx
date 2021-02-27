@@ -1,6 +1,12 @@
 import React, { FC } from 'react';
 
-const Section: FC = props => {
+interface Props {
+  title: string;
+}
+
+const Section: FC<Props> = props => {
+  // const { title } = props;
+
   return <div>{props.children}</div>;
 };
 

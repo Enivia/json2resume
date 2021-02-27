@@ -1,6 +1,7 @@
 :root {
+  --text-color: #333333;
   --primary-color: #000000;
-  --text-color: #555555;
+  --secondary-color: #000000;
   --font-size: 16px;
   --line-height: 1.5em;
   --padding: 12px;
@@ -12,8 +13,18 @@
   transform-origin: left top;
   box-sizing: border-box;
   background: #eee;
+  position: relative;
   color: var(--primary-color);
   font-size: var(--font-size);
   line-height: var(--line-height);
+}
+
+.json2resume-renderer {
+  column-width: 210mm;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
   padding: var(--padding);
 }

@@ -1,19 +1,19 @@
 import * as React from 'react';
-import { merge } from 'lodash';
+import { merge, throttle } from 'lodash';
 import ResumeConfigContext, { ConfigContextValue } from './resume-config-context';
 import ResumeConfig from './interfaces/config';
 import Resume from './interfaces/resume';
 import renderer from './renderer';
 import Basic from './renderer/basic';
-import useWindowResize from './hooks/use-window-resize';
 import {
   defaultFooterConfig,
   defaultGlobalConfig,
   defaultHeaderConfig,
   defaultSectionConfig,
 } from './constants';
+import { setGlobalVariable } from './utils';
 
-import './index.css';
+import './index.less';
 
 interface Props {
   resume: Resume;
@@ -25,19 +25,30 @@ const Json2Resume: React.FC<Props> = React.memo(props => {
   const { sort, basicInfo, ...sections } = resume;
 
   const ref = React.createRef<HTMLDivElement>();
-  useWindowResize(() => {
-    const container = ref.current;
-    if (container) {
-      const height = container.clientHeight;
-      container.style.transform = `scale(${600 / height})`;
-      // container.style.width = height / Math.sqrt(2) + 'px';
-    }
-  });
+
+  React.useEffect(() => {
+    const handleResize = throttle(() => {
+      const container = ref.current;
+      if (container) {
+        const parentHeight = container.parentElement?.clientHeight || 600;
+        const height = container.clientHeight;
+        container.style.transform = `scale(${parentHeight / height})`;
+      }
+    }, 200);
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const configContextValue = React.useMemo<ConfigContextValue>(() => {
     const { global, header, section, footer } = config || {};
+    const globalConfig = merge({}, defaultGlobalConfig, global);
+    // update css variables
+    setGlobalVariable(globalConfig);
     const configValue: ResumeConfig = {
-      global: merge({}, defaultGlobalConfig, global),
+      global: globalConfig,
       header: merge({}, defaultHeaderConfig, header),
       section: merge({}, defaultSectionConfig, section),
       footer: merge({}, defaultFooterConfig, footer),
@@ -48,13 +59,15 @@ const Json2Resume: React.FC<Props> = React.memo(props => {
   return (
     <ResumeConfigContext.Provider value={configContextValue}>
       <div className="json2resume-renderer-container" ref={ref}>
-        <Basic info={basicInfo} />
-        <div>
-          {sort.map(key => {
-            const Renderer = renderer[key];
-            const rendererProps = { [key]: sections[key] };
-            return <Renderer key={key} {...rendererProps} />;
-          })}
+        <div className="json2resume-renderer">
+          <Basic info={basicInfo} />
+          <div>
+            {sort.map(key => {
+              const Renderer = renderer[key];
+              const rendererProps = { [key]: sections[key] };
+              return <Renderer key={key} {...rendererProps} />;
+            })}
+          </div>
         </div>
       </div>
     </ResumeConfigContext.Provider>
