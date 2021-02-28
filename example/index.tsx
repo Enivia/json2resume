@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Components from './src/components';
 import Demos from './src/demos';
+import '../dist/json2resume.cjs.development.css'
 
 const App = () => {
   return (

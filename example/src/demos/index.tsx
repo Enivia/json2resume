@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Json2Resume from '../../../src';
+import Json2Resume from '../../../dist';
 
 const Demos = () => {
   return (

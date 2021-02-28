@@ -7,8 +7,7 @@ module.exports = {
     config.plugins.push(
       postcss({
         plugins: [autoprefixer(), cssnano({ preset: 'default' })],
-        // inject: true,
-        modules: true,
+        inject: true,
         extract: !!options.writeMeta,
       })
     );
