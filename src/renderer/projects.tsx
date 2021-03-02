@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Section from '../components/section';
 import { TProject } from '../interfaces/resume';
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const Projects: FC<Props> = () => {
-  return <div>project renderer</div>;
+  return <Section title="Project">project renderer</Section>;
 };
 
 export default Projects;

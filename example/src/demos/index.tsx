@@ -3,7 +3,7 @@ import Json2Resume from '../../../dist';
 
 const Demos = () => {
   return (
-    <div style={{ height: 1000 }}>
+    <div style={{ height: 1200 }}>
       <Json2Resume
         resume={{
           sort: ['educations', 'experiences', 'projects', 'awards', 'skills'],

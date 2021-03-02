@@ -1,4 +1,4 @@
-export type TSize = 'xs' | 's' | 'm' | 'l' | 'xl';
+export type TSize = 's' | 'm' | 'l';
 export type TPlacement = 'left' | 'right' | 'center';
 
 export type TGlobalConfig = {

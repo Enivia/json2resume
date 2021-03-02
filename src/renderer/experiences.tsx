@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Section from '../components/section';
 import { TExperience } from '../interfaces/resume';
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const Experiences: FC<Props> = () => {
-  return <div>experience renderer</div>;
+  return <Section title="Experience">experience renderer</Section>;
 };
 
 export default Experiences;

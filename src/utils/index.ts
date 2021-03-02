@@ -8,19 +8,15 @@ const configVariableMap: Record<string, string> = {
 };
 
 const lineHeightValues: Record<TSize, string> = {
-  xs: '1.15em',
-  s: '1.3em',
+  s: '1.2em',
   m: '1.5em',
-  l: '1.6em',
-  xl: '1.75em',
+  l: '1.8em',
 };
 
 const paddingValues: Record<TSize, string> = {
-  xs: '12px',
-  s: '16px',
+  s: '12px',
   m: '24px',
-  l: '36px',
-  xl: '48px',
+  l: '48px',
 };
 
 export function setGlobalVariable(config?: TGlobalConfig) {

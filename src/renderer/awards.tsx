@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Section from '../components/section';
 import { TAward } from '../interfaces/resume';
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const Awards: FC<Props> = () => {
-  return <div>awards renderer</div>;
+  return <Section title="Awards">awards renderer</Section>;
 };
 
 export default Awards;

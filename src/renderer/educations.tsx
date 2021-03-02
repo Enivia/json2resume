@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Educations: FC<Props> = () => {
-  return <Section title="education"> educations renderer</Section>;
+  return <Section title="Education"> educations renderer</Section>;
 };
 
 export default Educations;
