@@ -1,16 +1,10 @@
 import * as React from 'react';
-import { merge, throttle } from 'lodash';
+import { throttle } from 'lodash';
 import ResumeConfigContext, { ConfigContextValue } from './resume-config-context';
 import ResumeConfig from './interfaces/config';
 import Resume from './interfaces/resume';
 import renderer from './renderer';
 import Basic from './renderer/basic';
-import {
-  defaultFooterConfig,
-  defaultGlobalConfig,
-  defaultHeaderConfig,
-  defaultSectionConfig,
-} from './constants';
 import { setGlobalVariable } from './utils';
 
 import './index.less';
@@ -44,15 +38,9 @@ const Json2Resume: React.FC<Props> = React.memo(props => {
 
   const configContextValue = React.useMemo<ConfigContextValue>(() => {
     const { global, header, section, footer } = config || {};
-    const globalConfig = merge({}, defaultGlobalConfig, global);
     // update css variables
-    setGlobalVariable(globalConfig);
-    const configValue: ResumeConfig = {
-      global: globalConfig,
-      header: merge({}, defaultHeaderConfig, header),
-      section: merge({}, defaultSectionConfig, section),
-      footer: merge({}, defaultFooterConfig, footer),
-    };
+    setGlobalVariable(global);
+    const configValue: ResumeConfig = { global, header, section, footer };
     return { config: configValue };
   }, [config]);
 

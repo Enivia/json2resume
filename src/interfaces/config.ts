@@ -16,16 +16,16 @@ export type THeaderConfig = {
   };
 };
 
-export type TTitleConfig = {
+export type TTextConfig = {
   size?: TSize;
   bold?: boolean;
   italic?: boolean;
 };
 
+export type TSectionTitleConfig = TTextConfig & {};
+
 export type TSectionConfig = {
-  title?: TTitleConfig;
-  itemTitle?: TTitleConfig;
-  itemSubtitle?: TTitleConfig;
+  title?: TSectionTitleConfig;
 };
 
 export type TFooterContent = 'page' | 'name';

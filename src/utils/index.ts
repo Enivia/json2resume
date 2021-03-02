@@ -1,4 +1,3 @@
-import { lineHeightValues, paddingValues } from '../constants';
 import { TGlobalConfig, TSize } from '../interfaces/config';
 
 const configVariableMap: Record<string, string> = {
@@ -8,9 +7,26 @@ const configVariableMap: Record<string, string> = {
   padding: '--padding',
 };
 
-export function setGlobalVariable(config: TGlobalConfig) {
+const lineHeightValues: Record<TSize, string> = {
+  xs: '1.15em',
+  s: '1.3em',
+  m: '1.5em',
+  l: '1.6em',
+  xl: '1.75em',
+};
+
+const paddingValues: Record<TSize, string> = {
+  xs: '12px',
+  s: '16px',
+  m: '24px',
+  l: '36px',
+  xl: '48px',
+};
+
+export function setGlobalVariable(config?: TGlobalConfig) {
+  const globalConfig = config || {};
   const root = document.documentElement;
-  Object.entries(config).map(([key, value]) => {
+  Object.entries(globalConfig).map(([key, value]) => {
     let variable = value as string;
     switch (key) {
       case 'lineHeight':

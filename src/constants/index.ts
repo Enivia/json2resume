@@ -4,7 +4,6 @@ import {
   THeaderConfig,
   TSectionConfig,
   TSize,
-  TTitleConfig,
 } from '../interfaces/config';
 
 export const defaultGlobalConfig: TGlobalConfig = {
@@ -19,39 +18,12 @@ export const defaultHeaderConfig: THeaderConfig = {
   picture: { size: 'm' },
 };
 
-export const defaultTitleConfig: TTitleConfig = {
-  size: 'm',
-  bold: true,
-};
-
-export const defaultSubtitleConfig: TTitleConfig = {
-  italic: true,
-};
-
 export const defaultSectionConfig: TSectionConfig = {
-  title: defaultTitleConfig,
-  itemTitle: defaultTitleConfig,
-  itemSubtitle: defaultSubtitleConfig,
+  title: { size: 'm', bold: true },
 };
 
 export const defaultFooterConfig: TFooterConfig = {
   placement: 'center',
-};
-
-export const lineHeightValues: Record<TSize, string> = {
-  xs: '1.15em',
-  s: '1.3em',
-  m: '1.5em',
-  l: '1.6em',
-  xl: '1.75em',
-};
-
-export const paddingValues: Record<TSize, string> = {
-  xs: '4px',
-  s: '8px',
-  m: '12px',
-  l: '24px',
-  xl: '48px',
 };
 
 export const pictureSizeValues: Record<TSize, string> = {
