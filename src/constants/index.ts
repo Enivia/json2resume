@@ -13,7 +13,7 @@ export const defaultGlobalConfig: TGlobalConfig = {
 };
 
 export const defaultHeaderConfig: THeaderConfig = {
-  placement: 'center',
+  placement: 'left',
   picture: { size: 'm' },
 };
 
