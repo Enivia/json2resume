@@ -12,7 +12,7 @@ export type THeaderConfig = {
   placement?: TPlacement;
   picture?: {
     size?: TSize;
-    square?: boolean;
+    shape?: 'circle' | 'square' | 'rectangle';
   };
 };
 

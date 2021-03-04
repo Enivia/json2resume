@@ -7,7 +7,12 @@ const Demos = () => {
       <Json2Resume
         resume={{
           sort: ['educations', 'experiences', 'projects', 'awards', 'skills'],
-          basicInfo: {},
+          basicInfo: {
+            name: 'Enivia',
+            email: 'aqingcc@outlook.com',
+            phone: '123456',
+            github: 'https://github.com/Enivia/',
+          },
         }}
       />
     </div>

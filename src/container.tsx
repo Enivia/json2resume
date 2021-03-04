@@ -2,6 +2,7 @@ import { throttle } from 'lodash';
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import Header from './components/header';
+import Content from './components/content';
 import Resume from './interfaces/resume';
 import renderer from './renderer';
 import useResumeConfig from './hooks/use-resume-config';
@@ -42,13 +43,13 @@ const Container: FC<Props> = props => {
         })}
       >
         <Header basicInfo={basicInfo} />
-        <div>
+        <Content>
           {sort.map(key => {
             const Renderer = renderer[key];
             const rendererProps = { [key]: sections[key] };
             return <Renderer key={key} {...rendererProps} />;
           })}
-        </div>
+        </Content>
       </div>
     </div>
   );
