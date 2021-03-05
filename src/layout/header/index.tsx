@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import React, { FC } from 'react';
 import useResumeConfig from '../../hooks/use-resume-config';
 import { TBasicInfo } from '../../interfaces/resume';
-
 import styles from './index.module.less';
 
 const prefix = 'header';
@@ -28,17 +27,12 @@ const Header: FC<Props> = props => {
   return (
     <div className={headerCls}>
       <div className={pictureCls}>
-        <div></div>
+        <div className={styles[`${prefix}-picture-content`]}></div>
       </div>
       <div className={styles[`${prefix}-info`]}>
         <div className={styles[`${prefix}-info-name`]}>{basicInfo.name}</div>
         <div className={styles[`${prefix}-info-items`]}>
-          {infoItemSort.map(
-            key =>
-              basicInfo[key] && (
-                <div className={styles[`${prefix}-info-item`]}>{basicInfo[key]}</div>
-              )
-          )}
+          {infoItemSort.map(key => basicInfo[key] && <div>{basicInfo[key]}</div>)}
         </div>
       </div>
     </div>

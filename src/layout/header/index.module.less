@@ -12,18 +12,18 @@
     height: 100%;
   }
   &-center {
-    .header-info-items {
+    .header-info > .header-info-items {
       display: flex;
       flex-wrap: wrap;
-      & > .header-info-item {
-        margin: 0 12px;
+      & > div {
+        margin: 0 8px;
       }
     }
   }
 
-  .header-picture {
+  &-picture {
     background-color: #fff;
-    & > div {
+    & > &-content {
       padding-top: 100%;
     }
     &-s {
@@ -43,15 +43,15 @@
     }
   }
 
-  .header-info {
+  &-info {
     text-align: center;
-    & > .header-info-name {
+    & > &-name {
       line-height: 1.6em;
       font-size: 1.4em;
       font-weight: bold;
       margin: 8px;
     }
-    .header-info-item {
+    & > &-items > div {
       line-height: 1.6em;
       font-size: 0.8em;
     }
