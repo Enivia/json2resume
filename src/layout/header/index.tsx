@@ -6,14 +6,18 @@ import styles from './index.module.less';
 
 const prefix = 'header';
 
-const infoItemSort: Array<keyof TBasicInfo> = ['email', 'phone', 'github'];
+const infoItemSort: Array<keyof Omit<TBasicInfo, 'name' | 'jobTitle'>> = [
+  'email',
+  'phone',
+  'github',
+];
 
 interface Props {
   basicInfo: TBasicInfo;
 }
 
 const Header: FC<Props> = props => {
-  const { basicInfo } = props;
+  const { name, jobTitle, ...rest } = props.basicInfo;
   const { header } = useResumeConfig();
 
   const headerCls = classNames(styles[prefix], {
@@ -30,9 +34,10 @@ const Header: FC<Props> = props => {
         <div className={styles[`${prefix}-picture-content`]}></div>
       </div>
       <div className={styles[`${prefix}-info`]}>
-        <div className={styles[`${prefix}-info-name`]}>{basicInfo.name}</div>
+        {name && <div className={styles[`${prefix}-info-name`]}>{name}</div>}
+        {jobTitle && <div className={styles[`${prefix}-info-job`]}>{jobTitle}</div>}
         <div className={styles[`${prefix}-info-items`]}>
-          {infoItemSort.map(key => basicInfo[key] && <div>{basicInfo[key]}</div>)}
+          {infoItemSort.map(key => rest[key] && <div key={key}>{rest[key]}</div>)}
         </div>
       </div>
     </div>
