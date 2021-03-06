@@ -18,7 +18,7 @@ export const defaultHeaderConfig: THeaderConfig = {
 };
 
 export const defaultSectionConfig: TSectionConfig = {
-  title: { size: 'm', bold: true },
+  title: { size: 'm' },
 };
 
 export const defaultFooterConfig: TFooterConfig = {

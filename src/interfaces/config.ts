@@ -18,8 +18,8 @@ export type THeaderConfig = {
 
 export type TTextConfig = {
   size?: TSize;
-  bold?: boolean;
-  italic?: boolean;
+  // bold?: boolean;
+  // italic?: boolean;
 };
 
 export type TSectionTitleConfig = TTextConfig & {};

@@ -6,8 +6,23 @@ interface Props {
   experiences: TExperience[];
 }
 
-const Experiences: FC<Props> = () => {
-  return <Section title="Experience">experience renderer</Section>;
+const Experiences: FC<Props> = props => {
+  const { experiences } = props;
+
+  return (
+    <Section title="工作经历">
+      {experiences.map(({ company, job, city, start, end, desc }, i) => (
+        <Section.Content
+          key={i}
+          title={`${company}${job && `,${job}`}`}
+          subtitle={city}
+          date={{ start, end }}
+        >
+          {desc}
+        </Section.Content>
+      ))}
+    </Section>
+  );
 };
 
 export default Experiences;

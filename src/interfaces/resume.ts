@@ -2,6 +2,7 @@ export type TLevel = 1 | 2 | 3 | 4 | 5;
 
 export type TBasicInfo = {
   name?: string;
+  jobTitle?: string;
   email?: string;
   phone?: string;
   picture?: string;
