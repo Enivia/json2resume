@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import useResumeConfig from '../../hooks/use-resume-config';
-import SectionContent from './content';
+import SectionItem from './Item';
 import styles from './index.module.less';
 
 const prefix = 'section';
@@ -11,7 +11,7 @@ interface Props {
 }
 
 interface ISection extends FC<Props> {
-  Content: typeof SectionContent;
+  Item: typeof SectionItem;
 }
 
 const Section: ISection = (props => {
@@ -32,6 +32,6 @@ const Section: ISection = (props => {
   );
 }) as ISection;
 
-Section.Content = SectionContent;
+Section.Item = SectionItem;
 
 export default Section;

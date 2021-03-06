@@ -11,7 +11,7 @@ interface Props {
   date?: TDateContent;
 }
 
-const SectionContent: FC<Props> = props => {
+const SectionItem: FC<Props> = props => {
   const { title, subtitle, date } = props;
 
   return (
@@ -30,4 +30,4 @@ const SectionContent: FC<Props> = props => {
   );
 };
 
-export default SectionContent;
+export default SectionItem;

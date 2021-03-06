@@ -26,12 +26,14 @@ export type TTextConfig = {
 
 export type TSectionTitleConfig = TTextConfig & {};
 
+export type TDateConfig = { connector?: TDateConnector; formatter?: TDateFormatter };
+
+export type TLevelConfig = { type?: 'bar' | 'circel' };
+
 export type TSectionConfig = {
   title?: TSectionTitleConfig;
-  date?: {
-    connector?: TDateConnector;
-    formatter?: TDateFormatter;
-  };
+  date?: TDateConfig;
+  level?: TLevelConfig;
 };
 
 export type TFooterContent = 'page' | 'name';

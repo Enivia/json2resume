@@ -12,9 +12,9 @@ const Projects: FC<Props> = props => {
   return (
     <Section title="项目经验">
       {projects.map(({ project, start, end, desc }, i) => (
-        <Section.Content key={i} title={project} date={{ start, end }}>
+        <Section.Item key={i} title={project} date={{ start, end }}>
           {desc}
-        </Section.Content>
+        </Section.Item>
       ))}
     </Section>
   );

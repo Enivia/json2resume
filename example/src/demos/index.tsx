@@ -67,6 +67,13 @@ const resume: Resume = {
         '这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容',
     },
   ],
+  skills: [
+    { skill: '技能1', level: 5 },
+    { skill: '技能2', level: 4 },
+    { skill: '技能3', level: 3 },
+    { skill: '技能4', level: 2 },
+    { skill: '技能5', level: 1 },
+  ],
 };
 
 const Demos = () => {

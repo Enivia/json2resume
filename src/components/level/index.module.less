@@ -1,0 +1,46 @@
+.level {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item {
+    width: 50%;
+  }
+  &-title {
+    font-size: 0.85em;
+    margin-bottom: 4px;
+  }
+  &-progress {
+    margin-bottom: 12px;
+  }
+
+  .bar {
+    width: 85%;
+    height: 12px;
+    position: relative;
+    background-color: #fafafa;
+    border-radius: 8px;
+    &-value {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: inherit;
+      background-color: #ccc;
+      &-1 {
+        width: 20%;
+      }
+      &-2 {
+        width: 40%;
+      }
+      &-3 {
+        width: 60%;
+      }
+      &-4 {
+        width: 80%;
+      }
+      &-5 {
+        width: 100%;
+      }
+    }
+  }
+}

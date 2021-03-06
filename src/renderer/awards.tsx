@@ -12,9 +12,9 @@ const Awards: FC<Props> = props => {
   return (
     <Section title="奖项/荣誉">
       {awards.map(({ award, issuer, date, desc }, i) => (
-        <Section.Content key={i} title={award} subtitle={issuer} date={date}>
+        <Section.Item key={i} title={award} subtitle={issuer} date={date}>
           {desc}
-        </Section.Content>
+        </Section.Item>
       ))}
     </Section>
   );

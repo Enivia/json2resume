@@ -12,14 +12,14 @@ const Educations: FC<Props> = props => {
   return (
     <Section title="教育信息">
       {educations.map(({ degree, school, major, start, end, desc }, i) => (
-        <Section.Content
+        <Section.Item
           key={i}
           title={`${degree}${school && `,${school}`}`}
           subtitle={major}
           date={{ start, end }}
         >
           {desc}
-        </Section.Content>
+        </Section.Item>
       ))}
     </Section>
   );
