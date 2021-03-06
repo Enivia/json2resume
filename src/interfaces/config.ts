@@ -1,5 +1,7 @@
 export type TSize = 's' | 'm' | 'l';
 export type TPlacement = 'left' | 'right' | 'center';
+export type TDateConnector = '-' | '~' | '至';
+export type TDateFormatter = 'yyyy-MM-dd' | 'yyyy/MM/dd' | 'yyyy年MM月dd日';
 
 export type TGlobalConfig = {
   primaryColor?: string;
@@ -26,6 +28,10 @@ export type TSectionTitleConfig = TTextConfig & {};
 
 export type TSectionConfig = {
   title?: TSectionTitleConfig;
+  date?: {
+    connector?: TDateConnector;
+    formatter?: TDateFormatter;
+  };
 };
 
 export type TFooterContent = 'page' | 'name';

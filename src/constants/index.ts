@@ -19,6 +19,7 @@ export const defaultHeaderConfig: THeaderConfig = {
 
 export const defaultSectionConfig: TSectionConfig = {
   title: { size: 'm' },
+  date: { connector: '-', formatter: 'yyyy/MM/dd' },
 };
 
 export const defaultFooterConfig: TFooterConfig = {

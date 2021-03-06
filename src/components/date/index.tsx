@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from 'react';
-
-// TODO: date format configable
+import useResumeConfig from '../../hooks/use-resume-config';
+import { formatDate } from '../../utils';
 
 export type TDateContent = string | { start?: string; end?: string };
 
@@ -10,13 +10,20 @@ interface Props {
 
 const Date: FC<Props> = props => {
   const { date } = props;
-
+  const { section } = useResumeConfig();
   if (!date) {
     return null;
   }
 
+  const formatter = section.date?.formatter || 'yyyy/MM/dd';
+  const connector = section.date?.connector || '-';
   const displayDate =
-    typeof date === 'string' ? date : `${date.start} - ${(date as any).end}`;
+    typeof date === 'string'
+      ? formatDate(date, formatter)
+      : `${formatDate(date.start, formatter)} ${connector} ${formatDate(
+          date.end,
+          formatter
+        )}`;
 
   return <Fragment>{displayDate}</Fragment>;
 };

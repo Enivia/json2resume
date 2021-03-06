@@ -1,4 +1,5 @@
-import { TGlobalConfig, TSize } from '../interfaces/config';
+import { format, parse } from 'date-fns';
+import { TDateFormatter, TGlobalConfig, TSize } from '../interfaces/config';
 
 const configVariableMap: Record<string, string> = {
   primaryColor: '--primary-color',
@@ -34,4 +35,9 @@ export function setGlobalVariable(config?: TGlobalConfig) {
     }
     root.style.setProperty(configVariableMap[key], variable);
   });
+}
+
+export function formatDate(date?: string, formatter?: TDateFormatter) {
+  if (!date || !formatter) return '';
+  return format(parse(date, 'yyyyMMdd', new Date()), formatter);
 }
