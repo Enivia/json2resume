@@ -5,27 +5,45 @@ import { TLevel } from '../../interfaces/resume';
 
 import styles from './index.module.less';
 
+const prefix = 'level';
+
 interface ProgressProps {
   level?: TLevel;
 }
 
 const Bar: FC<ProgressProps> = props => {
-  const cls = classNames(styles['bar-value'], {
-    [styles[`bar-value-${props.level}`]]: true,
+  const barPrefix = `${prefix}-bar`;
+
+  const cls = classNames(styles[`${barPrefix}-value`], {
+    [styles[`${barPrefix}-value-${props.level}`]]: true,
   });
 
   return (
-    <div className={styles.bar}>
+    <div className={styles[barPrefix]}>
       <div className={cls}></div>
     </div>
   );
 };
 
-const Circle: FC<ProgressProps> = () => {
-  return <div></div>;
-};
+const Circle: FC<ProgressProps> = props => {
+  const circlePrefix = `${prefix}-circle`;
 
-const prefix = 'level';
+  const getCls = (num: number) => {
+    return classNames(styles[`${circlePrefix}-item`], {
+      [styles[`${circlePrefix}-item-selected`]]: num <= (props.level || 0),
+    });
+  };
+
+  return (
+    <div className={styles[circlePrefix]}>
+      <div className={getCls(1)}></div>
+      <div className={getCls(2)}></div>
+      <div className={getCls(3)}></div>
+      <div className={getCls(4)}></div>
+      <div className={getCls(5)}></div>
+    </div>
+  );
+};
 
 interface Props {
   levels: { title?: string; level?: TLevel }[];
@@ -37,7 +55,7 @@ const Level: FC<Props> = props => {
 
   const renderProgress = (level?: TLevel) => {
     switch (section.level?.type) {
-      case 'circel':
+      case 'circle':
         return <Circle level={level} />;
       case 'bar':
       default:

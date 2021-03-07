@@ -28,7 +28,7 @@ export type TSectionTitleConfig = TTextConfig & {};
 
 export type TDateConfig = { connector?: TDateConnector; formatter?: TDateFormatter };
 
-export type TLevelConfig = { type?: 'bar' | 'circel' };
+export type TLevelConfig = { type?: 'bar' | 'circle' };
 
 export type TSectionConfig = {
   title?: TSectionTitleConfig;
