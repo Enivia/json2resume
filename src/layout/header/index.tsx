@@ -40,6 +40,7 @@ const Header: FC<Props> = props => {
           {infoItemSort.map(key => rest[key] && <div key={key}>{rest[key]}</div>)}
         </div>
       </div>
+      <div className={styles[`${prefix}-bg`]}></div>
     </div>
   );
 };

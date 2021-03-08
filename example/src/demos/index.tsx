@@ -78,8 +78,10 @@ const resume: Resume = {
 
 const Demos = () => {
   return (
-    <div style={{ height: 1200 }}>
-      <Json2Resume resume={resume} />
+    <div style={{ backgroundColor: '#eee', padding: 20 }}>
+      <div style={{ height: 1200 }}>
+        <Json2Resume resume={resume} config={{ global: { primaryColor: '#1890ff' } }} />
+      </div>
     </div>
   );
 };

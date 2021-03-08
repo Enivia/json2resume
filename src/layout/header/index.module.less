@@ -3,8 +3,19 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  background: #aaa;
-  padding: var(--padding);
+  padding-bottom: var(--padding);
+  position: relative;
+
+  &-bg {
+    position: absolute;
+    top: calc(var(--padding) * -1);
+    left: calc(var(--padding) * -1);
+    width: calc(~'100% + var(--padding) * 2');
+    height: calc(~'100% + var(--padding)');
+    z-index: 0;
+    background-color: #f7f7f7;
+  }
+
   &-left,
   &-right {
     flex-shrink: 0;
@@ -23,6 +34,8 @@
 
   &-picture {
     background-color: #fff;
+    position: relative;
+    z-index: 1;
     & > &-content {
       padding-top: 100%;
     }
@@ -45,15 +58,17 @@
 
   &-info {
     text-align: center;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
     & > &-name {
       line-height: 1.6em;
       font-size: 1.4em;
       font-weight: 700;
-      margin: 8px 0 4px;
     }
     & > &-job {
       font-weight: 400;
-      margin: 4px 0 8px;
+      margin-bottom: 8px;
     }
     & > &-items > div {
       line-height: 1.6em;
