@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Json2Resume from '../../../dist';
+import Json2Resume, { ResumeInstance } from '../../../dist';
 import Resume from '../../../dist/interfaces/resume';
 
 const resume: Resume = {
@@ -77,10 +77,18 @@ const resume: Resume = {
 };
 
 const Demos = () => {
+  const ref = React.createRef<ResumeInstance>();
+
   return (
     <div style={{ backgroundColor: '#eee', padding: 20 }}>
+      <button onClick={() => ref.current?.switchPage('backward')}>-</button>
+      <button onClick={() => ref.current?.switchPage('forward')}>+</button>
       <div style={{ height: 1200 }}>
-        <Json2Resume resume={resume} config={{ global: { primaryColor: '#1890ff' } }} />
+        <Json2Resume
+          ref={ref}
+          resume={resume}
+          config={{ global: { primaryColor: '#006fca' } }}
+        />
       </div>
     </div>
   );

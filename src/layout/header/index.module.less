@@ -13,7 +13,7 @@
     width: calc(~'100% + var(--padding) * 2');
     height: calc(~'100% + var(--padding)');
     z-index: 0;
-    background-color: #f7f7f7;
+    background-color: var(--primary-bg);
   }
 
   &-left,
@@ -22,6 +22,12 @@
     width: 25%;
     height: 100%;
   }
+
+  &-left > &-bg,
+  &-right > &-bg {
+    height: calc(~'100% + var(--padding) * 2');
+  }
+
   &-center {
     .header-info > .header-info-items {
       display: flex;

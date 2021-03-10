@@ -35,6 +35,9 @@ export function setGlobalVariable(config?: TGlobalConfig) {
     }
     root.style.setProperty(configVariableMap[key], variable);
   });
+  if (globalConfig.primaryColor) {
+    root.style.setProperty('--primary-bg', `${globalConfig.primaryColor}20`);
+  }
 }
 
 export function formatDate(date?: string, formatter?: TDateFormatter) {
