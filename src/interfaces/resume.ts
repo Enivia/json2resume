@@ -54,9 +54,9 @@ export type TResumeSection = {
   skills?: TSkill[];
 };
 
-export type TSelctionType = keyof TResumeSection;
+export type TSectionType = keyof TResumeSection;
 
 export default interface Resume extends TResumeSection {
-  sort: TSelctionType[];
+  sort: TSectionType[];
   basicInfo: TBasicInfo;
 }

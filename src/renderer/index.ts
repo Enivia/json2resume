@@ -1,12 +1,12 @@
 import { ComponentType } from 'react';
-import { TSelctionType } from '../interfaces/resume';
+import { TSectionType } from '../interfaces/resume';
 import Awards from './awards';
 import Educations from './educations';
 import Experiences from './experiences';
 import Projects from './projects';
 import Skills from './skills';
 
-const renderer: Record<TSelctionType, ComponentType<any>> = {
+const renderer: Record<TSectionType, ComponentType<any>> = {
   educations: Educations,
   experiences: Experiences,
   projects: Projects,
