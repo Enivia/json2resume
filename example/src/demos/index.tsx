@@ -6,15 +6,16 @@ const resume: Resume = {
   sort: ['educations', 'experiences', 'projects', 'awards', 'skills'],
   basicInfo: {
     name: 'Enivia',
-    jobTitle: '前端开发工程师',
+    jobTitle: '前端开发',
+    picture: 'https://i.loli.net/2021/04/15/1BFIXVNxnM2mvAP.jpg',
     email: 'aqingcc@outlook.com',
     phone: '123456',
     github: 'https://github.com/Enivia/',
   },
   educations: [
     {
-      school: '某知名大学',
-      major: '计算机科学与技术',
+      school: '大学 A',
+      major: '专业 A',
       degree: '本科',
       start: '20140901',
       end: '20180601',
@@ -22,9 +23,9 @@ const resume: Resume = {
         '这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容',
     },
     {
-      school: '某知名大学',
-      major: '计算机科学与技术',
-      degree: '本科',
+      school: '大学 B',
+      major: '专业 B',
+      degree: '研究生',
       start: '20140901',
       end: '20180601',
       desc:
@@ -33,15 +34,15 @@ const resume: Resume = {
   ],
   experiences: [
     {
-      company: '非常著名的公司',
-      job: '前端开发',
+      company: '公司 A',
+      job: 'XX开发',
       city: '北京',
       start: '20140901',
       end: '20180601',
     },
     {
-      company: '非常著名的公司',
-      job: '前端开发',
+      company: '公司 B',
+      job: 'XX开发',
       city: '北京',
       start: '20140901',
       end: '20180601',
@@ -60,11 +61,14 @@ const resume: Resume = {
   ],
   awards: [
     {
-      award: '一个非常重要的奖项',
-      issuer: '一个很牛的机构',
+      award: '一个奖项',
+      issuer: '一个机构',
       date: '20200304',
-      desc:
-        '这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容这是一段描述内容',
+    },
+    {
+      award: '一个奖项',
+      issuer: '一个机构',
+      date: '20200304',
     },
   ],
   skills: [
